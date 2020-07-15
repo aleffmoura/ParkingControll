@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+  </PropertyGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="8.1.1" />
+    <PackageReference Include="DelegateDecompiler.EntityFrameworkCore" Version="0.28.0" />
+    <PackageReference Include="FluentValidation" Version="8.6.2" />
+    <PackageReference Include="FluentValidation.AspNetCore" Version="8.6.2" />
+    <PackageReference Include="MediatR" Version="7.0.0" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.OData" Version="7.2.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="SimpleInjector" Version="4.6.2" />
+    <PackageReference Include="SimpleInjector.Integration.AspNetCore.Mvc.Core" Version="4.6.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ParkingControll.Application\ParkingControll.Application.csproj" />
+    <ProjectReference Include="..\ParkingControll.Cfg.Mappers\ParkingControll.Cfg.Mappers.csproj" />
+    <ProjectReference Include="..\ParkingControll.Cfg.OData\ParkingControll.Cfg.OData.csproj" />
+    <ProjectReference Include="..\ParkingControll.Domain\ParkingControll.Domain.csproj" />
+    <ProjectReference Include="..\ParkingControll.Infra.CrossCutting\ParkingControll.Infra.CrossCutting.csproj" />
+    <ProjectReference Include="..\ParkingControll.Infra.Data\ParkingControll.Infra.Data.csproj" />
+  </ItemGroup>
+
+</Project>

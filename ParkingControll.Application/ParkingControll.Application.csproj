@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="8.1.1" />
+    <PackageReference Include="FluentValidation" Version="8.6.2" />
+    <PackageReference Include="MediatR" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ParkingControll.Domain\ParkingControll.Domain.csproj" />
+    <ProjectReference Include="..\ParkingControll.Infra.CrossCutting\ParkingControll.Infra.CrossCutting.csproj" />
+  </ItemGroup>
+
+</Project>
