@@ -27,7 +27,6 @@ namespace ParkingControll.Api.Controllers.Features.Vehicles
         #region HTTP POST
 
         [HttpPost]
-        [Authorize()]
         public async Task<IActionResult> Create([FromBody] VehicleCreateCommand priceCreate)
              => HandleCommand(await _mediator.Send(priceCreate));
         #endregion
@@ -35,7 +34,6 @@ namespace ParkingControll.Api.Controllers.Features.Vehicles
         #region HTTP PATCH
 
         [HttpPatch("exit")]
-        [Authorize()]
         public async Task<IActionResult> PatchClient([FromBody]VehicleUpdateCommand command)
             => HandleCommand(await _mediator.Send(command));
 
@@ -44,14 +42,12 @@ namespace ParkingControll.Api.Controllers.Features.Vehicles
 
         [HttpGet("with-values")]
         [ODataQueryOptionsValidate(AllowedQueryOptions.All)]
-        [Authorize()]
         public async Task<IActionResult> Amount([FromRoute] ODataQueryOptions<VehicleAmountViewModel> queryOptions)
             => await HandleQueryable<VehicleAmountViewModel, VehicleAmountViewModel>(await _mediator.Send(new VehicleAmountQuery()), queryOptions);
 
 
         [HttpGet("in-parking/today")]
         [ODataQueryOptionsValidate(AllowedQueryOptions.All)]
-        [Authorize()]
         public async Task<IActionResult> ReadAll([FromRoute] ODataQueryOptions<Vehicle> queryOptions)
             => await HandleQueryable<Vehicle, VehicleViewModel>(await _mediator.Send(new VehicleQueryAll(DateTime.Now)), queryOptions);
     }

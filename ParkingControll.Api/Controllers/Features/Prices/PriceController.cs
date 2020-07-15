@@ -27,7 +27,6 @@ namespace ParkingControll.Controllers.Features
         #region HTTP POST
 
         [HttpPost]
-        [Authorize()]
         public async Task<IActionResult> Create([FromBody] PriceCreateCommand priceCreate)
              => HandleCommand(await _mediator.Send(priceCreate));
         #endregion
@@ -35,7 +34,6 @@ namespace ParkingControll.Controllers.Features
 
         [HttpGet]
         [ODataQueryOptionsValidate(AllowedQueryOptions.All)]
-        [Authorize()]
         public async Task<IActionResult> ReadAll([FromRoute] DateTime period,[FromRoute] ODataQueryOptions<Price> queryOptions)
             => await HandleQueryable<Price, PriceViewModel>(await _mediator.Send(new PriceQueryAll(period)), queryOptions);
     }
